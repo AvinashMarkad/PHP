@@ -17,8 +17,8 @@
     }
 </style>
 <body>
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-<h1>Choos the option:</h1>
+<form   action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+<h1>Choose the option:</h1>
 <input type="text" name="a" placeholder="Enter the value of a">
 <input type="text" name="b" placeholder="Enter the value of b">
   
@@ -30,11 +30,12 @@
     <input type="text" name="option" placeholder="Enter the option">
     <input type="submit" value="Submit">
     </form>
-    <?php
+     <?php
+   
       if($_SERVER["REQUEST_METHOD"]=="POST"){
         $sw=htmlspecialchars($_REQUEST['option']);
-        if(empty($sw)){
-            print"Feild is Empty !";
+        if(isset($sw)){
+            print"Feild is Filled !";
         }
         else{
              switch($sw){
@@ -80,6 +81,7 @@
              }
         }
      }
-    ?>
+
+    ?> 
 </body>
 </html>
